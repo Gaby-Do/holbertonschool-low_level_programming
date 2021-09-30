@@ -1,8 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - imrpimir una frase
- * return 0
+ * main - imprime una frase
+ *
+ * Description: imprime una frase
+ *
+ * Return: 0
  */
 
 int main(void)

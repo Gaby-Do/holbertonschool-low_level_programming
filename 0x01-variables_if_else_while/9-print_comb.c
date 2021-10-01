@@ -16,7 +16,7 @@ int main(void)
 	while (a <= 57)
 	{
 		putchar(a);
-		if (a < 57)
+		if (a <= 56)
 		putchar(44);
 		putchar(32);
 		a++;

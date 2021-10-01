@@ -10,15 +10,17 @@
 
 int main(void)
 {
-	char alfa;
+	char a;
 
-	alfa = 'a';
-	while (alfa <= 'z')
+	a = 48;
+	while (a <= 57)
 	{
-		putchar (alfa);
-		alfa++;
+		putchar(a);
+		if (a < 57)
+		putchar(44);
+		putchar(32);
+		a++;
 	}
-	putchar ('\n');
-
+	putchar('\n');
 	return (0);
 }

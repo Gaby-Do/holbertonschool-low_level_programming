@@ -17,9 +17,11 @@ int main(void)
 	{
 		putchar(a);
 		a++;
-			if (a < 58)
-				putchar(44);
-				putchar(32);
+		if (a < 58)
+		{
+			putchar(44);
+			putchar(32);
+		}
 	}
 	putchar('\n');
 	return (0);

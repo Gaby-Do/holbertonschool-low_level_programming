@@ -16,8 +16,23 @@ int add(int a, int b)
 
 	c = 0;
 	c = a + b;
-	_putchar ((c / 10) + '0');
-	_putchar ((c % 10) + '0');
-	_putchar ('\n');
+	if (c >= 0 && c < 10)
+	{
+		_putchar ((c % 10) + '0');
+		_putchar ('\n');
+	}
+	if (c < 0 && c > -10)
+	{
+		c = c * (-1);
+		_putchar (45);
+		_putchar ((c % 10) + '0');
+		_putchar ('\n');
+	}
+	if (c > 9 || c < -9)
+	{
+		_putchar ((c / 10) + '0');
+		_putchar ((c % 10) + '0');
+		_putchar ('\n');
+	}
 	return (0);
 }

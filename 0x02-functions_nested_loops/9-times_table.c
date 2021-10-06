@@ -23,10 +23,10 @@ void times_table(void)
 			{
 				_putchar (32);
 				_putchar (c + '0');
-					if (b == 9)
-					{	
-						break;
-					}
+				if (b == 9)
+				{
+					break;
+				}
 				_putchar (44);
 				_putchar (32);
 			}
@@ -34,14 +34,14 @@ void times_table(void)
 			{
 				_putchar ((c / 10) + '0');
 				_putchar ((c % 10) + '0');
-					if (b == 9)
-					{
-						break;
-					}
-				_putchar (44);
-				_putchar (32);
+				if (b == 9)
+				{
+					break;
+				}
+					_putchar (44);
+					_putchar (32);
 			}
 		}
-		_putchar (10);
+	_putchar (10);
 	}
 }

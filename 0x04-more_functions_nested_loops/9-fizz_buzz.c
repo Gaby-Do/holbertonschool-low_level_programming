@@ -4,6 +4,7 @@
 /**
  *main - “Fizz-Buzz test”
  *
+ *Description: “Fizz-Buzz test”
  *Return: 0
  */
 int main(void)
@@ -35,5 +36,5 @@ int main(void)
 			}
 		}
 	}
-	printf("Buzz \n");
+	printf("Buzz\n");
 }

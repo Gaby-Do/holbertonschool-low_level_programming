@@ -3,6 +3,7 @@
 /**
   *_isupper - checks for uppercase character.
   *
+  *@c: int
   *Return: 1 or 0
   */
 

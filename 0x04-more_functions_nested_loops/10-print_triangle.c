@@ -3,10 +3,11 @@
 /**
   *print_triangle - prints a triangle
   *
+  *@size: int
   *Return: 0
   */
 void print_triangle(int size)
-{	
+{
 	int a, b, c;
 
 	for (a = 1; a <= size; a++)

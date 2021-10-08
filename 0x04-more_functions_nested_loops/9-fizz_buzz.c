@@ -16,13 +16,16 @@ int main(void)
 		{
 			printf("FizzBuzz ");
 		}
-		if ((a % 3) == 0)
+		else
 		{
-			printf("Fizz ");
-		}
-		if ((a % 5) == 0)
-		{
-			printf("Buzz ");
+			if ((a % 3) == 0)
+			{
+				printf("Fizz ");
+			}
+			if ((a % 5) == 0)
+			{
+				printf("Buzz ");
+			}
 		}
 		if (((a % 3) != 0) && ((a % 5) != 0))
 		{

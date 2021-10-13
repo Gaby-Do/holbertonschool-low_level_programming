@@ -19,14 +19,14 @@ void print_array(int *a, int n)
 	{
 		l++;
 	}
-	if ((l > 0) && (n > 0) && (n < l))
+	if ((l >= 2) && (n > 0) && (n < l))
 	{
-		while (aux < n)
+		while (aux < n - 1)
 		{
 			printf("%d, ", a[aux]);
 			aux++;
 		}
-		printf("%d", a[n]);
+		printf("%d", a[n - 1]);
 		printf("\n");
 	}
 }

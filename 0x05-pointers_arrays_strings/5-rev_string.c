@@ -20,12 +20,15 @@ void rev_string(char *s)
 	l--;
 	start = 0;
 	end = l;
-	for (; end != start && start + 1 != end;)
+	if (l > 0)
 	{
-		aux = s[start];
-		s[start] = s[end];
-		s[end] = aux;
-		start++;
-		end--;
+		for (; end != start && start + 1 != end;)
+		{
+			aux = s[start];
+			s[start] = s[end];
+			s[end] = aux;
+			start++;
+			end--;
+		}
 	}
 }

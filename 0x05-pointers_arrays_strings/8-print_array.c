@@ -19,7 +19,7 @@ void print_array(int *a, int n)
 	{
 		l++;
 	}
-	if ((l >= 2) && (n > 0) && (n < l))
+	if ((l >= 2) && (n > 1) && (n < l))
 	{
 		while (aux < n - 1)
 		{

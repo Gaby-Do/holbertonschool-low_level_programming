@@ -16,6 +16,11 @@ char *cap_string(char *s)
 
 	for (a = 0; s[a] != '\0'; a++)
 	{
+		if ((s[0] >= 97) && (s[0] <= 122))
+		{
+			s[0] = s[0] - 32;
+			continue;
+		}
 		for (l = 0; l < 13; l++)
 		{
 			if (s[a] == dic[l])

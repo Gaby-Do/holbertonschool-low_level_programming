@@ -21,7 +21,7 @@ void rev_string(char *s)
 	end = l - 1;
 	if (l > 0)
 	{
-		for (; end != start && start + 1 != end;)
+		for (; start <= l / 2;)
 		{
 			aux = s[start];
 			s[start] = s[end];

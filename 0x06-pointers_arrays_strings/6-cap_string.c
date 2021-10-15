@@ -6,19 +6,26 @@
  *
  * @s: pointer
  * Return: s
+ *
+ * "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
  */
 char *cap_string(char *s)
 {
-	int a = 0;
+	int a;
+	int l;
+	char dic[] = {9, 10, 32, 33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
 
-	for (; s[a] != '\0'; a++)
+	for (a = 0; s[a] != '\0'; a++)
 	{
-		if ((s[a - 1] < 97) || (s[a - 1] > 122))
+		for (l = 0; l < 13; l++)
 		{
-			if ((s[a - 1] <= 65) || (s[a - 1] >= 92))
+			if (s[a] == dic[l])
 			{
-				if ((s[a] >= 97) && (s[a] <= 122))
-				s[a] = s[a] - 32;
+				if ((s[a + 1] >= 97) && (s[a + 1] <= 122))
+				{
+					s[a + 1] = s[a + 1] - 32;
+				}
+				break;
 			}
 		}
 	}

@@ -1,6 +1,6 @@
-include "main.h"
+#include "main.h"
 /**
- * _strchr - locates a character in a string.
+ ** _strchr - locates a character in a string.
  *
  * Description: locates a character in a string.
  *
@@ -11,5 +11,27 @@ include "main.h"
  */
 char *_strchr(char *s, char c)
 {
+	int i;
+	char *p;
 
+	if (c != '\0')
+	{
+		for (i = 0; s[i] != '\0'; i++)
+		{
+			if (s[i] == c)
+			{
+				p = &s[i];
+				break;
+			}
+			else
+			{
+				p = '\0';
+			}
+		}
+	}
+	else
+	{
+		p = '\0';
+	}
+	return (p);
 }

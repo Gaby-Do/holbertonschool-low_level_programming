@@ -10,26 +10,20 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int x, y, c1, c2;
+	int x = 0;
+	int y = 0;
+	int c1 = 0;
+	int c2 = 0;
 
-	for (x = 0; x < size; x++)
+	while (x < size * size)
 	{
-		for (y = 0; y < size; y++)
-		{
-			if (x == y)
-			{
-				c1 = c1 + a[(x * size) + y];
-				break;
-			}
-		}
-		for (y = 0; y < size; y++)
-		{
-			if (y == size - x)
-			{
-				c2 = c2 + a[(x * size) + y];
-				break;
-			}
-		}
+		c1 = c1 + a[x];
+		x = x + size + 1;
+	}
+	while (y < size * size - 1)
+	{
+		c2 = c2 + a[y];
+		y = y + size - 1;
 	}
 	printf("%d, ", c1);
 	printf("%d\n", c2);

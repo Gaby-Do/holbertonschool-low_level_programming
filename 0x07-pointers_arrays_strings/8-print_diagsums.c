@@ -11,7 +11,7 @@
 void print_diagsums(int *a, int size)
 {
 	int x = 0;
-	int y = 0;
+	int y = size - 1;
 	int c1 = 0;
 	int c2 = 0;
 

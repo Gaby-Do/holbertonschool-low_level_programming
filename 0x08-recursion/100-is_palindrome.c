@@ -21,16 +21,19 @@ int _strlen_recursion(char *a)
  * Description: auxiliar para palindrome
  *
  * @x: pointer
- * @y: int
+ * @y: pointer
  * Return: 0 or 1
  */
-int _aux(char *x, int y)
+int _aux(char *x, char *y)
 {
-	int h;
 
-	if (*x == *x + y)
-		h = _aux((x + 1), (y - 1));
-	return (h);
+	if (x == y || y < x)
+		return (1);
+	if (*x == *y)
+	{
+		return (_aux(x + 1, y - 1));
+	}
+	return (0);
 }
 
 /**
@@ -44,19 +47,13 @@ int _aux(char *x, int y)
 int is_palindrome(char *s)
 {
 	int l;
-	int q;
+	char *z;
 
 	l = _strlen_recursion(s);
+	if (l <= 1)
+		return (1);
 	if (*s == '\0')
 		return (1);
-	if (*s == *(s + l - 1))
-	{
-		l--;
-		q = _aux((s + 1), (l - 1));
-		return (q);
-	}
-	else
-	{
-		return (0);
-	}
+	z = s + l - 1;
+	return (_aux(s, z));
 }

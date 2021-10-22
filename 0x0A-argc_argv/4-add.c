@@ -25,7 +25,8 @@ int main(int argc, char **argv)
 				printf("%s\n", "Error");
 				return (1);
 			}
-			y += atoi(argv[i]);
+			else
+				y += atoi(argv[i]);
 		}
 		printf("%d\n", y);
 	}
@@ -36,6 +37,8 @@ int main(int argc, char **argv)
 			printf("%d\n", 0);
 			return (0);
 		}
+		if (argc == 2)
+			printf("%s\n", "Error");
 	}
 	return (0);
 }

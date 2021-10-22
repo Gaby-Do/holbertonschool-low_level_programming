@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * digit - checks the string in argv is a number
+ *
+ * Description: checks the string in argv is a number
+ *
+ * @s: pointer
+ * Return: 1 if true -1 if false
+ */
+int digit(char *s)
+{
+	int i;
+	int x = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+			x = x * 10 + (s[i] - '0');
+		else
+			return (-1);
+	}
+	return (0);
+}
+
+/**
  * main -  adds positive numbers
  *
  * Description:  adds positive numbers
@@ -12,15 +35,13 @@
 int main(int argc, char **argv)
 {
 	int i;
-	int x;
 	int y = 0;
 
 	if (argc >= 3)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			x = atoi(argv[i]);
-			if (x == 0)
+			if (digit(argv[i]))
 			{
 				printf("%s\n", "Error");
 				return (1);
@@ -35,7 +56,6 @@ int main(int argc, char **argv)
 		if (argc == 1)
 		{
 			printf("%d\n", 0);
-			return (0);
 		}
 		if (argc == 2)
 			printf("%s\n", "Error");

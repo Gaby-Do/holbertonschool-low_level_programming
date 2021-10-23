@@ -25,16 +25,36 @@ int main(int argc, char **argv)
 		printf("%d\n", 0);
 	else
 	{
-		x = num / 25;
-		num = num % 25;
-		x += num / 10;
-		num = num % 10;
-		x += num / 5;
-		num = num % 5;
-		x += num / 2;
-		num = num % 2;
-		x += num % 2;
-	}
+		while (num > 0)
+		{
+			x++;
+			if ((num - 25) >= 0)
+			{
+				num -= 25;
+				continue;
+			}
+			if ((num - 10) >= 0)
+			{
+				num -= 10;
+				continue;
+			}
+			if ((num - 5) >= 0)
+			{
+				num -= 5;
+				continue;
+			}
+			if ((num - 2) >= 0)
+			{
+				num -= 2;
+				continue;
+			}
+			if ((num - 1) >= 0)
+			{
+				num -= 2;
+				continue;
+			}
+		}
 		printf("%d\n", x);
+	}
 	return (x);
 }

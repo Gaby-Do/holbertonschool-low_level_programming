@@ -16,28 +16,53 @@ char *str_concat(char *s1, char *s2)
 	int i = 0;
 	char *s3;
 
-	if (s1 == NULL || s2 == NULL || (s1 == 0 && s2 == 0))
-		return (NULL);
-	while (s1[x] != '\0')
-		x++;
-	while (s1[y] != '\0')
-		y++;
-	s3 = malloc((sizeof(char) * (x + 1 + y + 1)));
-	if (s3 == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	if (s1 != NULL && s2 != NULL)
 	{
-		s3[i] = s1[i];
-		i++;
+		while (s1[x] != '\0')/*busco largo de s1*/
+			x++;
+		while (s1[y] != '\0')/*busco largo de s2*/
+			y++;
+		s3 = malloc((sizeof(char) * (x + 1 + y + 1)));/*pido memoria para s3*/
+		if (s3 == NULL)
+			return (NULL);
+		while (s1[i] != '\0')
+		{
+			s3[i] = s1[i];
+			i++;
+		}
+		x = i;
+		i = 0;
+		while (s2[i] != '\0')
+		{
+			s3[x] = s2[i];
+			x++;
+			i++;
+		}
+		s3[x + 1] = '\0';
+		return (s3);
 	}
-	x = i;
-	i = 0;
-	while (s2[i] != '\0')
+	else
 	{
-		s3[x] = s2[i];
-		x++;
-		i++;
+		if (s1 == NULL)
+		{
+			s3 = malloc(sizeof(char) * (x + 1));
+			i = 0;
+			while (s1[i] != '\0')
+			{
+				s3[i] = s1[i];
+				i++;
+			}
+		}
+		if (s2 == NULL)
+		{
+			s3 = malloc(sizeof(char) * (y + 1));
+			i = 0;
+			while (s2[i] != '\0')
+			{
+				s3[i] = s2[i];
+				i++;
+			}
+		}
 	}
-	s3[x + 1] = '\0';
 	return (s3);
 }

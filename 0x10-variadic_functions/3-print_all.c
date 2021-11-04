@@ -74,11 +74,11 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", a);
 				frmt[j].f(argumentos);
+				a = ", ";
 			}
 			j++;
 		}
 		i++;
-		a = ", ";
 	}
 	va_end(argumentos);
 	printf("\n");

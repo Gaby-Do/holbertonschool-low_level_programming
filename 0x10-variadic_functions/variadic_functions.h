@@ -1,6 +1,14 @@
 #ifndef VARIADICFUNCTIONS_H
 #define VARIADICFUNCTIONS_H
 #include <stdarg.h>
+/**
+ * struct tipos - tipo de caracteres a imprimir,
+ * asociados a la funcion que imprime
+ * Description: tipo de caracteres a imprimir,
+ * asociados a la funcion que imprime
+ * @x: char
+ * @f: pointer to funcion
+ */
 typedef struct tipos
 {
 	char x;

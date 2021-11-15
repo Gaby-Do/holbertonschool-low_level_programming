@@ -16,19 +16,19 @@ int main(void)
 	{
 		z = x + y;
 		printf("%li", z);
+		i++;
 		if (i < 50)
 			printf(", ");
-		i++;
 		x = y + z;
 		printf("%li", x);
+		i++;
 		if (i < 50)
 			printf(", ");
-		i++;
 		y = z + x;
 		printf("%li", y);
+		i++;
 		if (i < 50)
 			printf(", ");
-		i++;
 		if (i == 50)
 			printf("\n");
 	}

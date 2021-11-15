@@ -5,17 +5,17 @@
  */
 int main(void)
 {
-	long long int x = 1, y = 2, z = 0;
+	unsigned long int x = 1, y = 2, z = 0;
 	int i = 2;
 
-	printf("%lld, ", x);
-	printf("%lld, ", y);
+	printf("%lu, ", x);
+	printf("%lu, ", y);
 	while (i <= 50)
 	{
 		if (i <= 50)
 		{
 			z = x + y;
-			printf("%lld", z);
+			printf("%lu", z);
 			i++;
 			if (i < 50)
 				printf(", ");
@@ -28,7 +28,7 @@ int main(void)
 		if (i <= 50)
 		{
 			x = y + z;
-			printf("%lld", x);
+			printf("%lu", x);
 			i++;
 			if (i < 50)
 				printf(", ");
@@ -41,7 +41,7 @@ int main(void)
 		if (i <= 50)
 		{
 			y = z + x;
-			printf("%lld", y);
+			printf("%lu", y);
 			i++;
 			if (i < 50)
 				printf(", ");

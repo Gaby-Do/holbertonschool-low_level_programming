@@ -5,30 +5,32 @@
  */
 int main(void)
 {
-	int x = 1;
-	int y = 2;
-	int z = 0;
+	unsigned long int x = 1;
+	unsigned long int y = 2;
+	unsigned long int z = 0;
 	int i = 2;
 
-	printf("%d, ", x);
-	printf("%d, ", y);
+	printf("%li, ", x);
+	printf("%li, ", y);
 	while (i <= 50)
 	{
 		z = x + y;
-		printf("%d", z);
+		printf("%li", z);
 		if (i < 50)
 			printf(", ");
+		i++;
 		x = y + z;
-		printf("%d", x);
+		printf("%li", x);
 		if (i < 50)
 			printf(", ");
+		i++;
 		y = z + x;
-		printf("%d", y);
+		printf("%li", y);
 		if (i < 50)
 			printf(", ");
+		i++;
 		if (i == 50)
 			printf("\n");
-		i++;
 	}
 	return (0);
 }

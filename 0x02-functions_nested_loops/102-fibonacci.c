@@ -16,32 +16,8 @@ int main(void)
 		{
 			z = x + y;
 			printf("%lu", z);
-			i++;
-			if (i < 50)
-				printf(", ");
-			else
-			{
-				printf("\n");
-				return (0);
-			}
-		}
-		if (i <= 50)
-		{
-			x = y + z;
-			printf("%lu", x);
-			i++;
-			if (i < 50)
-				printf(", ");
-			else
-			{
-				printf("\n");
-				return (0);
-			}
-		}
-		if (i <= 50)
-		{
-			y = z + x;
-			printf("%lu", y);
+			x = y;
+			y = z;
 			i++;
 			if (i < 50)
 				printf(", ");
@@ -52,4 +28,5 @@ int main(void)
 			}
 		}
 	}
+	return (0);
 }

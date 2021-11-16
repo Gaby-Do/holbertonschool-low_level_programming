@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 /**
  * print_number - prints an integer using putchar
  *
@@ -8,37 +8,35 @@
  */
 void print_number(int n)
 {
+	int h = 1;
+	int i = 0;
+
+	if (n < 0)
+	{
+		putchar ('-');
+		n = -n;
+	}
 	if (n == 0)
 	{
-		_putchar ('0');
+		putchar ('0');
 	}
 	else
 	{
-		if (n < 0)
+		while (n / 10)
 		{
-			_putchar('-');
-			n = n * -1;
+			i++;
 		}
-		if ((n / 1000) != 0)
+		while (i > 0)
 		{
-			_putchar ((n / 1000) + '0');
-			_putchar (((n % 1000) / 100) + '0');
-			_putchar ((((n % 1000) % 100) / 10) + '0');
-			_putchar ((((n % 1000) % 100) % 10) + '0');
+			h = h * 10;
+			i--;
 		}
-		else
+		while (h / 10)
 		{
-			if ((n / 100) != 0)
-			{
-				_putchar ((n / 100) + '0');
-				_putchar (((n % 100) / 10) + '0');
-				_putchar (((n % 100) % 10) + '0');
-			}
-			else
-			{
-				_putchar ((n / 10) + '0');
-				_putchar ((n % 10) + '0');
-			}
+			putchar ((n / h) + '0');
+			putchar (((n % h) / (h / 10)) + '0');
+			n = n % h;
+			h = h / 10;
 		}
 	}
 }

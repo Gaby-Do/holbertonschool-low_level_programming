@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * sum_listint - returns the sum of all the data (n) of a linked list.
+ * sum_listint - works! - returns the sum of all the data (n) of a linked list.
  * @head: pointer to list
  * Return: returns the sum of all the data of a list, 0 if empty.
  */

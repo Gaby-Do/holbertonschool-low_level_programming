@@ -14,26 +14,30 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (!filename)
 		return (0);
-	str = malloc(letters);
+
+	str = malloc(sizeof(char) * letters);
 	if (!str)
 		return (0);
+
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
 	countrd = read(fd, str, letters);
-	close(fd);
-	if (countrd < 0)
+	if (countrd == -1)
 	{
 		countrd = 0;
 		free(str);
+		close(fd);
 		return (0);
 	}
 	countwr = write(STDOUT_FILENO, str, countrd);
-	if (countwr < 0)
+	if (countwr == -1)
 	{
 		free(str);
+		close(fd);
 		return (0);
 	}
 	free(str);
+	close(fd);
 	return (countwr);
 }

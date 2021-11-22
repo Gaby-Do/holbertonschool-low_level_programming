@@ -31,9 +31,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	countwr = write(STDOUT_FILENO, str, countrd);
 	if (countwr < 0)
 	{
-		free(s);
+		free(str);
 		return (0);
 	}
-	free(s);
+	free(str);
 	return (countwr);
 }

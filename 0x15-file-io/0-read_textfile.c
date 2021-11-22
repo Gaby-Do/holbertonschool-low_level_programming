@@ -7,37 +7,39 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t countrd = 0;/*counts chars read*/
-	ssize_t countwr = 0;/*counts chars writen*/
-	char *str;/*pointer to buffer to read an write in/from*/
+	int rd = 0;/*counts chars read*/
+	int wr = 0;/*counts chars writen*/
+	char *buf;/*pointer to buffer to read an write in/from*/
 	int fd;/*file descriptor*/
 
 	if (!filename)
 		return (0);
 
-	str = malloc(sizeof(char) * letters);
-	if (!str)
+	buf = malloc(sizeof(char) * letters);
+	if (!buf)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return (0);
-	countrd = read(fd, str, letters);
-	if (countrd == -1)
 	{
-		countrd = 0;
-		free(str);
+		free(buf);
+		return (0);
+	}
+	rd = read(fd, buf, letters);
+	if (rd == -1)
+	{
+		free(buf);
 		close(fd);
 		return (0);
 	}
-	countwr = write(STDOUT_FILENO, str, countrd);
-	if (countwr == -1)
+	wr = write(STDOUT_FILENO, buf, rd);
+	if (wr == -1)
 	{
-		free(str);
+		free(buf);
 		close(fd);
 		return (0);
 	}
-	free(str);
+	free(buf);
 	close(fd);
-	return (countwr);
+	return (wr);
 }

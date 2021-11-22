@@ -13,7 +13,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	if (!text_content)
 		return (1);
-	fd = open(filename, O_APPEND);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
 	l = 0;
@@ -26,5 +26,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 	close(fd);
+	if (l != wr)
+		return (-1);
 	return (1);
 }

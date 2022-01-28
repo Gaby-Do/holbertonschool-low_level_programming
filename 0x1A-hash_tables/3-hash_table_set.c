@@ -16,6 +16,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	size = ht->size;
 	k = key_index((unsigned char *)key, size);
+	if (ht->array[k] && strcmp(key, ht->array[k]->key) == 0)
+	{
+		free(ht->array[k]->value);
+		ht->array[k]->value = strdup(value);
+		return (1);
+	}
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);

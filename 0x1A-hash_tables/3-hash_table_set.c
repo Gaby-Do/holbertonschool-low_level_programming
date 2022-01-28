@@ -31,8 +31,8 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int k = 0;
-	unsigned int size = 0;
+	unsigned long int k = 0;
+	unsigned long int size = 0;
 
 	if (!key)
 		return (0);

@@ -38,6 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (!ht)
 		return (0);
+	if (!value)
+		value = "";
 	size = ht->size;
 	k = key_index((unsigned char *)key, size);
 	if (add_node(&(ht->array[k]), key, value))

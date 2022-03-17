@@ -9,7 +9,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(NAME)
 
 school: $(OBJ)
-	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)
+	$(CC) -Wall -Werror -Wextra -pedantic $(SRC) -o $(NAME)
 
 clean:
 	$(RM) -f $(NAME) *~

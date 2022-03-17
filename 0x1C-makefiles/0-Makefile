@@ -2,5 +2,5 @@
 
 all: school
 
-school: school.o main.o m.h
-	cc school.c main.c -o school
+school: school.o main.o
+	gcc school.c main.c -o school
